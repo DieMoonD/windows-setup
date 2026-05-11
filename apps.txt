@@ -1,0 +1,35 @@
+# dev tools
+Git.Git
+GitHub.GitHubDesktop
+Microsoft.VisualStudioCode
+
+# browsers
+Mozzilla.Firefox
+Brave.Brave
+Google.Chrome.EXE
+
+# Voice chat
+TeamSpeakSystems.TeamSpeakClient.Beta.6
+Discord.Discord
+
+# game
+Valve.Steam
+EpicGames.EpicGamesLauncher
+FACEITLTD.FACEITAC
+
+# Tools
+Tailscale.Tailscale
+Guru3D.Afterburner
+Elgato.StreamDeck
+Elgato.WaveLink
+RevoUninstaller.RevoUninstaller
+Logitech.GHUB
+LocalSend.LocalSend
+REALiX.HWiNFO
+CPUID.CPU-Z.ROG
+OBSProject.OBSStudio
+Canva.Affinity
+LocalSend.LocalSend 
+
+# misc
+Spotify.Spotify
