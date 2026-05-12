@@ -1,30 +1,38 @@
-# windows-setup/install.ps1
-# One-click Windows app installer from GitHub repo
-
-# Exit on error
 $ErrorActionPreference = "Stop"
 
-# Check if winget exists
-if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Host "Installing winget..." -ForegroundColor Yellow
-    Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Host "winget was not found on this system." -ForegroundColor Red
+    Write-Host "Install or repair App Installer, then run the script again." -ForegroundColor Yellow
+    exit 1
 }
 
-# Read app list
-$apps = Get-Content "apps.txt" | Where-Object { $_ -and $_ -notmatch '^#' }
+if (-not (Test-Path ".\apps.txt")) {
+    Write-Host "apps.txt was not found in this folder." -ForegroundColor Red
+    exit 1
+}
+
+$apps = Get-Content ".\apps.txt" | Where-Object { $_.Trim() -ne "" -and $_ -notmatch '^\s*#' }
 
 foreach ($app in $apps) {
-    Write-Host "`nInstalling: $app" -ForegroundColor Green
-    
-    # Run winget install with error handling
-    $result = winget install --id $app.Split(' ')[0] --exact --silent --accept-source-agreements --accept-package-agreements --force 2>&1
-    
+    Write-Host "`nChecking: $app" -ForegroundColor Cyan
+
+    $installed = winget list --id $app -e --accept-source-agreements 2>$null
+
+    if ($LASTEXITCODE -eq 0 -and $installed) {
+        Write-Host "Installed already, trying upgrade: $app" -ForegroundColor Yellow
+        winget upgrade --id $app -e --silent --accept-source-agreements --accept-package-agreements
+    }
+    else {
+        Write-Host "Not installed, installing: $app" -ForegroundColor Green
+        winget install --id $app -e --silent --accept-source-agreements --accept-package-agreements
+    }
+
     if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ Success" -ForegroundColor Green
-    } else {
-        Write-Host "✗ Failed (continuing...)" -ForegroundColor Yellow
-        Write-Host $result -ForegroundColor Red
+        Write-Host "Done: $app" -ForegroundColor Green
+    }
+    else {
+        Write-Host "Failed: $app" -ForegroundColor Red
     }
 }
 
-Write-Host "`nAll done! Check apps.txt for your list." -ForegroundColor Cyan
+Write-Host "`nAll done!" -ForegroundColor Cyan
