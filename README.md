@@ -14,14 +14,6 @@ This repo keeps a simple list of apps in `apps.txt` and installs them with `wing
 
 ## How to use
 
-### Run locally
-
-Open PowerShell in this folder and run:
-
-```powershell
-.\install.ps1
-```
-
 ### Run from GitHub
 
 Use the raw PowerShell script URL:
@@ -30,57 +22,11 @@ Use the raw PowerShell script URL:
 irm https://raw.githubusercontent.com/DieMoonD/windows-setup/main/install.ps1 | iex
 ```
 
-## How to add apps
+### Run locally
 
-Find the package ID:
-
-```powershell
-winget search steam
-```
-
-Example result:
-
-```text
-Steam    Valve.Steam
-```
-
-Then add it to `apps.txt`:
-
-```text
-Valve.Steam
-```
-
-## apps.txt format
-
-Use one app per line:
-
-```text
-Microsoft.VisualStudioCode
-Git.Git
-Mozilla.Firefox
-Valve.Steam
-```
-
-Comments are allowed with `#`:
-
-```text
-# Core apps
-Microsoft.VisualStudioCode
-Git.Git
-
-# Browser
-Mozilla.Firefox
-
-# Gaming
-Valve.Steam
-```
-
-## How to update the repo
-
-After editing files:
+Open PowerShell in this folder and run:
 
 ```powershell
-git add .
-git commit -m "Update app list"
-git push
+.\install.ps1
 ```
+
