@@ -4,7 +4,7 @@ GitHub.GitHubDesktop
 Microsoft.VisualStudioCode
 
 # browsers
-Mozzilla.Firefox
+Mozilla.Firefox
 Brave.Brave
 Google.Chrome.EXE
 
