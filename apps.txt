@@ -15,7 +15,8 @@ Discord.Discord
 # game
 Valve.Steam
 EpicGames.EpicGamesLauncher
-FACEITLTD.FACEITAC
+# FACEITLTD.FACEITAC
+# Modrinth.ModrinthApp
 
 # Tools
 Tailscale.Tailscale
@@ -26,10 +27,10 @@ RevoUninstaller.RevoUninstaller
 Logitech.GHUB
 LocalSend.LocalSend
 REALiX.HWiNFO
-CPUID.CPU-Z.ROG
-OBSProject.OBSStudio
-Canva.Affinity
-LocalSend.LocalSend 
+# CPUID.CPU-Z.ROG
+# OBSProject.OBSStudio
+# Canva.Affinity
+# Rufus.Rufus
 
 # misc
 Spotify.Spotify
