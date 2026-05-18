@@ -1,0 +1,9 @@
+# tools
+Guru3D.Afterburner
+RevoUninstaller.RevoUninstaller
+REALiX.HWiNFO
+#CPUID.CPU-Z.ROG
+#OBSProject.OBSStudio
+#Canva.Affinity
+#LocalSend.LocalSend 
+

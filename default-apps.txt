@@ -1,0 +1,22 @@
+# browsers
+Mozilla.Firefox
+Brave.Brave
+Google.Chrome.EXE
+
+# game
+Valve.Steam
+EpicGames.EpicGamesLauncher
+#FACEITLTD.FACEITAC
+
+# voice chat
+#TeamSpeakSystems.TeamSpeakClient.Beta.6
+Discord.Discord
+
+# Tools
+Tailscale.Tailscale
+Elgato.StreamDeck
+Logitech.GHUB
+
+# Sound
+Elgato.WaveLink
+Spotify.Spotify
