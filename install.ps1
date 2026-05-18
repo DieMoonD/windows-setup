@@ -107,7 +107,7 @@ try {
         }
 
         Write-Host "`n=== Processing list: $listFile ===" -ForegroundColor Magenta
-        $apps = Get-Content -Path $listFile
+        $apps = Get-Content -Path $listFile | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and -not $_.Trim().StartsWith('#') }
 
         foreach ($app in $apps) {
             if ([string]::IsNullOrWhiteSpace($app)) { continue }
